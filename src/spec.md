@@ -1,14 +1,10 @@
 # Specification
 
 ## Summary
-**Goal:** Create a simple, responsive informational website in clear English that presents the owners’ claim to a rightful share of a land property, including references and a visible disclaimer.
+**Goal:** Add the requested plot (Dag) numbers to the existing property records for Hateberia (JL 167) and Radhaballabchak (JL 165) so they appear in the Property Details Plot List.
 
 **Planned changes:**
-- Build a responsive single-page (or small multi-page) site with sections: Intro/Summary, About the Owners (siblings), Property Overview, Claim Summary (including undisputed/disputed context), Contact.
-- Implement a single structured content file that drives all main site text so updates don’t require layout/component edits.
-- Add a “Documents / References” section that lists static-asset document links with title, optional date, and description, including an English empty state when none are provided.
-- Add a visible disclaimer stating the site is informational only, not legal advice, and reflects the owners’ position.
-- Apply a consistent formal visual theme (colors/typography/spacing) avoiding primarily blue/purple palettes.
-- Add and reference generated static images from `frontend/public/assets/generated` including a visible hero image and a favicon.
+- Update `frontend/src/content/siteContent.ts` for the Hateberia record (mouza "Hateberia", jl "167") to include plot numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 25, 26, 27, 28, 3/5726, 3/5727, 3/5728, 3/5729, 3/5730, 10/5731.
+- Update `frontend/src/content/siteContent.ts` for the Radhaballabchak record (mouza "Radhaballabchak", identified by a khatian reference note "JL 165") to include plot numbers: 22, 23, 22/894, 22/966, 22/967, 22/969, 22/970, 22/971.
 
-**User-visible outcome:** Visitors can view a formal, mobile-friendly claim information site with clear sections, document/reference links (or an empty-state message), a prominent disclaimer, and consistent styling; owners can update the site’s text via a single content file.
+**User-visible outcome:** In Property Details under "Disputed Land & Property with Maternal Uncles", the Plot List accordion for Hateberia (JL 167) and Radhaballabchak (JL 165) shows all specified Dag values exactly as provided (including fractional forms like "3/5726" and "22/894").

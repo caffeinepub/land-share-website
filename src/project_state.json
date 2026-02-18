@@ -1,11 +1,12 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 7,
   "summary": "Website project for siblings to present information about their rightful share of an undisputed/disputed land property.",
-  "architectural_notes": [],
+  "architectural_notes": [
+    "Represent property/land records in a single structured content file (e.g., JSON/YAML) grouped by category (undisputed/disputed) and rendered into tables/lists on the site."
+  ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Formal minimalist hero illustration depicting land boundaries and a document motif in neutral earth tones (land-hero.dim_1600x900.png)\n- Simple neutral favicon showing a minimal land-plot icon in monochrome/earth tone (favicon-land.dim_128x128.png)",
   "existing_features": [
     {
       "id": "feature-create-a-simple-responsive-informational-website-single-page-or-a-few-pages-that-presents-the-owners-claim-to-a-rightful-share-of-a-land-property-written-in-clear-english",
@@ -54,12 +55,50 @@
         "REQ-6"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-extend-the-structured-content-model-frontend-src-content-sitecontent-ts-to-support-detailed-property-records-grouped-by-category-e-g-undisputed-inherited-disputed-pending-mutation-disputed-with-maternal-uncles-and-other-missing-records-with-a-clear-repeatable-data-entry-format-for-mouza-block-district-state-police-station-ps-if-present-jl-if-present-khatian-and-type-notes-like-rs-current-original-list-of-plots-dag-plot-no-and-area-in-decimals-computed-displayed-totals-plots-count-total-decimals-and-or-acres-and-free-text-notes-e-g-mutation-status-banglarbhumi-discrepancies-deed-ref-placeholders-case-appeal-placeholders",
+      "title": "Extend the structured content model (frontend/src/content/siteContent.ts) to support detailed property records grouped by category (e.g., undisputed inherited, disputed pending mutation, disputed with maternal uncles, and other/missing records), with a clear, repeatable data-entry format for: Mouza, Block, District, State, Police Station (PS) if present, JL if present, Khatian (and type/notes like RS/current/original), list of plots (Dag/Plot No. and area in decimals), computed/displayed totals (plots count, total decimals and/or acres), and free-text notes (e.g., mutation status, Banglarbhumi discrepancies, deed ref placeholders, case/appeal placeholders).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-property-section-ui-frontend-src-app-tsx-and-any-new-non-immutable-components-to-render-the-new-structured-property-records-in-a-readable-format-including-category-headings-per-record-summary-fields-location-khatian-jl-ps-an-expandable-or-clearly-separated-plot-list-and-a-totals-notes-area-ensure-the-navigation-label-for-the-property-section-remains-clear-in-english-e-g-property-or-property-details",
+      "title": "Update the Property section UI (frontend/src/App.tsx and any new non-immutable components) to render the new structured property records in a readable format, including: category headings, per-record summary fields (location + khatian/JL/PS), an expandable or clearly separated plot list, and a totals/notes area; ensure the navigation label for the property section remains clear in English (e.g., “Property” or “Property Details”).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-structured-property-data-in-frontend-src-content-sitecontent-ts-for-the-record-with-mouza-hateberia-and-jl-167-so-that-its-plots-list-includes-these-plot-dag-numbers-1-2-3-4-5-6-7-8-9-10-11-22-23-25-26-27-28-3-5726-3-5727-3-5728-3-5729-3-5730-10-5731",
+      "title": "Update the structured property data in frontend/src/content/siteContent.ts for the record with mouza \"Hateberia\" and jl \"167\" so that its plots list includes these plot (Dag) numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 25, 26, 27, 28, 3/5726, 3/5727, 3/5728, 3/5729, 3/5730, 10/5731.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-structured-property-data-in-frontend-src-content-sitecontent-ts-for-the-record-with-mouza-radhaballabchak-the-record-whose-khatianreferences-include-a-reference-with-notes-jl-165-so-that-its-plots-list-includes-these-plot-dag-numbers-22-23-22-894-22-966-22-967-22-969-22-970-22-971",
+      "title": "Update the structured property data in frontend/src/content/siteContent.ts for the record with mouza \"Radhaballabchak\" (the record whose khatianReferences include a reference with notes \"JL 165\") so that its plots list includes these plot (Dag) numbers: 22, 23, 22/894, 22/966, 22/967, 22/969, 22/970, 22/971.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
     {
       "id": "AR-1",
       "summary": "Create a website to present information about siblings' rightful share of an undisputed/disputed land property.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add a structured “Property Details” content section (with a clear data entry format) to capture and display undisputed vs disputed land records (mouza, block, district/state, khatian, JL/PS, dag/plot numbers, areas, totals, notes like mutation status and Banglarbhumi discrepancies).",
       "reqIds": [],
       "status": "pending"
     }

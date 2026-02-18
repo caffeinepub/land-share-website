@@ -1,175 +1,35 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Land Share Website (Informational Claim Site)",
+  "title": "Add plot (Dag) numbers for Hateberia JL 167 and Radhaballabchak JL 165",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Create a simple responsive informational site presenting the owners’ land-share claim with clear, neutral English copy and required content sections.",
+      "id": "REQ-9",
+      "summary": "Insert specified plot (Dag) numbers into the Hateberia (JL 167) property record so the Plot List accordion renders with the full list.",
       "acceptanceCriteria": [
-        "Site loads successfully and is navigable on mobile and desktop.",
-        "All user-facing text is in English.",
-        "Content structure includes at minimum: (1) Intro/summary, (2) About the owners (siblings), (3) Property overview, (4) Claim summary (undisputed/disputed context), (5) Contact section.",
-        "Copy uses neutral, factual wording (no inflammatory language)."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "create",
-          "description": "Create the main single-page (or few-section) informational layout and navigation (e.g., anchored section nav) rendering: Intro/Summary, About Owners (siblings), Property Overview, Claim Summary (undisputed/disputed context), and Contact. Use responsive Tailwind layout and (where available) shadcn-ui building blocks (e.g., Card/Separator/Button equivalents) for consistent section styling; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/Section.tsx",
-          "operation": "create",
-          "description": "Create a reusable section wrapper component (title, optional subtitle, consistent spacing) used by all major sections to keep structure consistent and responsive. Optionally compose shadcn-ui primitives (e.g., Card) if present; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/SiteHeader.tsx",
-          "operation": "create",
-          "description": "Create a compact header with site title and simple in-page navigation links (scroll-to sections) suitable for mobile/desktop. If using shadcn-ui navigation primitives (e.g., Button for links), verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/SiteFooter.tsx",
-          "operation": "create",
-          "description": "Create a footer used on the main page to hold formal site meta and the disclaimer (wired from content). Keep styling consistent with the theme."
-        },
-        {
-          "path": "frontend/src/main.tsx",
-          "operation": "modify",
-          "description": "Ensure App is the rendered root and global providers remain intact. No authentication UI should be added for this informational site."
-        }
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "summary": "Implement a clear single-file content editing pattern so owners can update text without modifying layout code.",
-      "acceptanceCriteria": [
-        "There is a single, obvious place in the frontend codebase to edit the main website text content.",
-        "Updating the content file updates the rendered site without requiring edits across multiple components."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/content/siteContent.ts",
-          "operation": "create",
-          "description": "Create a single structured content module exporting all user-facing copy and structured data (site title, intro text, owners info, property overview, claim summary, contact details, disclaimer text, and documents list metadata). This should be the primary edit location for site content."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Refactor the page/sections to consume all text and lists from frontend/src/content/siteContent.ts (no hard-coded copy in layout components beyond generic labels)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Add a Documents / References section listing static document assets with title, optional date, description, and link; include a clean empty state.",
-      "acceptanceCriteria": [
-        "Documents section renders a list of items with at least: document title and a clickable link.",
-        "Document links point to static assets in the frontend build (no backend required).",
-        "If no documents are provided yet, the UI displays a clean empty-state message in English."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/DocumentsSection.tsx",
-          "operation": "create",
-          "description": "Create a Documents / References section that renders document items (title, optional date, short description, and link). Use consistent styling (optionally shadcn-ui Card/Separator components) and include an English empty-state when the list is empty; verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/content/siteContent.ts",
-          "operation": "modify",
-          "description": "Add a documents array describing static asset links (e.g., under frontend/public/assets/documents) with fields: title, href, optional date, and description. Allow the array to be empty to trigger the UI empty-state."
-        },
-        {
-          "path": "frontend/public/assets/documents/example-document.pdf",
-          "operation": "create",
-          "description": "Add a sample static document asset to validate linking behavior in the Documents / References section. (Owners can replace/remove files later without code changes.)"
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Wire the Documents / References section into the main page flow in the correct order among other sections, using data from the central content file."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Add a visible disclaimer stating informational-only and not legal advice; claims are presented as the owners’ position.",
-      "acceptanceCriteria": [
-        "Disclaimer is visible from the main page (either as a section or in the footer).",
-        "Disclaimer text is written in clear English and avoids legal guarantees."
+        "In the Property Details section, under \"Disputed Land & Property with Maternal Uncles\" for the Hateberia (JL 167) record, the Plot List accordion is visible and contains all specified plot numbers.",
+        "Each plot number is shown as a Dag value exactly as provided (including fractional forms like \"3/5726\" and \"10/5731\")."
       ],
       "file_operations": [
         {
           "path": "frontend/src/content/siteContent.ts",
           "operation": "modify",
-          "description": "Add/confirm disclaimer copy in clear English: informational only, not legal advice, and content represents the owners’ position."
-        },
-        {
-          "path": "frontend/src/components/SiteFooter.tsx",
-          "operation": "modify",
-          "description": "Render the disclaimer prominently in the footer (or a dedicated disclaimer area) using the centralized disclaimer text from the content file."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Ensure the footer (with disclaimer) is always visible from the main page (no route needed) and matches the overall layout styling."
+          "description": "Update the Property Details structured data for the record with mouza \"Hateberia\" and jl \"167\" by populating its plots array with Dag numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 25, 26, 27, 28, 3/5726, 3/5727, 3/5728, 3/5729, 3/5730, 10/5731. Use dagNo strings exactly as provided and set areaDecimals to 0 for each new plot (areas not provided), without changing totals fields."
         }
       ]
     },
     {
-      "id": "REQ-5",
-      "summary": "Define and apply a coherent, formal visual theme (non-blue/purple palette) with consistent typography, spacing, and component styling.",
+      "id": "REQ-10",
+      "summary": "Insert specified plot (Dag) numbers into the Radhaballabchak record (with khatian reference notes \"JL 165\") so the Plot List accordion renders with the full list.",
       "acceptanceCriteria": [
-        "Theme is consistent across sections (headings, body text, cards/sections, buttons/links).",
-        "Color palette is not primarily blue/purple.",
-        "Typography hierarchy is clear (at least H1/H2/body styles are distinguishable)."
+        "In the Property Details section, under \"Disputed Land & Property with Maternal Uncles\" for the Radhaballabchak record, the Plot List accordion is visible and contains all specified plot numbers.",
+        "Each plot number is shown as a Dag value exactly as provided (including fractional forms like \"22/894\" and \"22/971\")."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "create",
-          "description": "Add Tailwind base/components/utilities plus CSS variables for a formal earth-tone theme (e.g., sand/stone/charcoal) compatible with shadcn-ui tokens. Define clear typography hierarchy (H1/H2/body), link styles, and consistent spacing defaults. Avoid blue/purple as primary accents; verify the component's usage instructions before implementing where shadcn-ui tokens are involved."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
+          "path": "frontend/src/content/siteContent.ts",
           "operation": "modify",
-          "description": "Extend theme as needed for formal typography (e.g., fontFamily) and ensure container/typography plugin usage supports readable long-form content. Keep palette driven by CSS variables defined in index.css."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Apply consistent Tailwind classes for typography and spacing across sections (e.g., consistent max-width, section padding, heading styles). Use a unified button/link style for contact/document links (optionally via shadcn-ui Button); verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Wire generated images from frontend/public/assets/generated into the UI (hero illustration and favicon).",
-      "acceptanceCriteria": [
-        "Generated images exist under frontend/public/assets/generated and are referenced by the UI.",
-        "Hero/brand image is visible on the site.",
-        "Favicon is set and visible in the browser tab."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/land-hero.dim_1600x900.png",
-          "operation": "create",
-          "description": "Add the generated hero illustration asset at this exact path so it can be referenced as a static file by the UI."
-        },
-        {
-          "path": "frontend/public/assets/generated/favicon-land.dim_128x128.png",
-          "operation": "create",
-          "description": "Add the generated favicon asset at this exact path so it can be referenced by the HTML head."
-        },
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Set the favicon link in the HTML head to frontend/public/assets/generated/favicon-land.dim_128x128.png (static asset) so it appears in the browser tab."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Render a visible hero/brand image near the top of the main page using frontend/public/assets/generated/land-hero.dim_1600x900.png, with responsive sizing and accessible alt text in English."
+          "description": "Update the Property Details structured data for the record with mouza \"Radhaballabchak\" whose khatianReferences include notes \"JL 165\" by populating its plots array with Dag numbers: 22, 23, 22/894, 22/966, 22/967, 22/969, 22/970, 22/971. Use dagNo strings exactly as provided and set areaDecimals to 0 for each new plot (areas not provided), without changing totals fields."
         }
       ]
     }

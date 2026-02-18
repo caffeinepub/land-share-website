@@ -2,6 +2,7 @@ import SiteHeader from './components/SiteHeader';
 import SiteFooter from './components/SiteFooter';
 import Section from './components/Section';
 import DocumentsSection from './components/DocumentsSection';
+import PropertyDetailsSection from './components/PropertyDetailsSection';
 import { siteContent } from './content/siteContent';
 
 function App() {
@@ -62,32 +63,8 @@ function App() {
           </div>
         </Section>
 
-        {/* Property Overview Section */}
-        <Section 
-          id="property"
-          title={siteContent.property.title}
-        >
-          <div className="prose prose-lg max-w-none text-foreground">
-            {siteContent.property.content.map((paragraph, index) => (
-              <p key={index} className="mb-4 leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-            {siteContent.property.details && (
-              <div className="mt-8 p-6 bg-muted/50 rounded-lg border border-border">
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Property Details</h3>
-                <ul className="space-y-2">
-                  {Object.entries(siteContent.property.details).map(([key, value]) => (
-                    <li key={key} className="flex">
-                      <span className="font-medium min-w-[140px] text-foreground">{key}:</span>
-                      <span className="text-muted-foreground">{value}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        </Section>
+        {/* Property Details Section - New Structured Component */}
+        <PropertyDetailsSection />
 
         {/* Claim Summary Section */}
         <Section 

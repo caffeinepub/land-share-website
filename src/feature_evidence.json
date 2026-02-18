@@ -2,32 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-simple-responsive-informational-website-single-page-or-a-few-pages-that-presents-the-owners-claim-to-a-rightful-share-of-a-land-property-written-in-clear-english",
-      "featureTitle": "Create a simple, responsive informational website (single-page or a few pages) that presents the owners’ claim to a rightful share of a land property, written in clear English.",
+      "featureId": "feature-update-the-structured-property-data-in-frontend-src-content-sitecontent-ts-for-the-record-with-mouza-hateberia-and-jl-167-so-that-its-plots-list-includes-these-plot-dag-numbers-1-2-3-4-5-6-7-8-9-10-11-22-23-25-26-27-28-3-5726-3-5727-3-5728-3-5729-3-5730-10-5731",
+      "featureTitle": "Update the structured property data in frontend/src/content/siteContent.ts for the record with mouza \"Hateberia\" and jl \"167\" so that its plots list includes these plot (Dag) numbers: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 22, 23, 25, 26, 27, 28, 3/5726, 3/5727, 3/5728, 3/5729, 3/5730, 10/5731.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/Section.tsx",
-        "frontend/src/components/SiteFooter.tsx",
-        "frontend/src/components/SiteHeader.tsx",
-        "frontend/src/main.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-clear-content-editing-pattern-so-the-owners-can-update-website-text-without-touching-layout-code-e-g-a-single-structured-content-file-consumed-by-the-pages-sections",
-      "featureTitle": "Add a clear content-editing pattern so the owners can update website text without touching layout code (e.g., a single structured content file consumed by the pages/sections).",
-      "files": [
-        "frontend/src/App.tsx",
         "frontend/src/content/siteContent.ts"
       ],
       "components": [
@@ -38,16 +15,14 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
+        "REQ-9"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-include-a-documents-references-section-that-can-display-a-list-of-document-links-e-g-pdfs-or-images-served-as-static-assets-with-title-date-optional-and-a-short-description-for-each-item",
-      "featureTitle": "Include a “Documents / References” section that can display a list of document links (e.g., PDFs or images) served as static assets, with title, date (optional), and a short description for each item.",
+      "featureId": "feature-update-the-structured-property-data-in-frontend-src-content-sitecontent-ts-for-the-record-with-mouza-radhaballabchak-the-record-whose-khatianreferences-include-a-reference-with-notes-jl-165-so-that-its-plots-list-includes-these-plot-dag-numbers-22-23-22-894-22-966-22-967-22-969-22-970-22-971",
+      "featureTitle": "Update the structured property data in frontend/src/content/siteContent.ts for the record with mouza \"Radhaballabchak\" (the record whose khatianReferences include a reference with notes \"JL 165\") so that its plots list includes these plot (Dag) numbers: 22, 23, 22/894, 22/966, 22/967, 22/969, 22/970, 22/971.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/DocumentsSection.tsx",
         "frontend/src/content/siteContent.ts"
       ],
       "components": [
@@ -58,66 +33,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-visible-disclaimer-section-stating-the-website-is-for-informational-purposes-only-and-does-not-constitute-legal-advice-and-that-claims-are-presented-as-the-owners-position",
-      "featureTitle": "Add a visible disclaimer section stating the website is for informational purposes only and does not constitute legal advice, and that claims are presented as the owners’ position.",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/components/SiteFooter.tsx",
-        "frontend/src/content/siteContent.ts"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-define-and-apply-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-formal-property-claim-informational-site-and-use-it-consistently-across-the-website-avoid-blue-purple-palettes-unless-explicitly-requested-later",
-      "featureTitle": "Define and apply a coherent visual theme (colors, typography, spacing, and component styling) suitable for a formal property/claim informational site, and use it consistently across the website (avoid blue/purple palettes unless explicitly requested later).",
-      "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/index.css",
-        "frontend/tailwind.config.js"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-render-any-generated-images-as-static-assets-from-frontend-public-assets-generated-and-use-them-in-the-site-e-g-hero-illustration-and-favicon",
-      "featureTitle": "Render any generated images as static assets from frontend/public/assets/generated and use them in the site (e.g., hero illustration and favicon).",
-      "files": [
-        "frontend/index.html",
-        "frontend/src/App.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
+        "REQ-10"
       ],
       "confidence": "high"
     }

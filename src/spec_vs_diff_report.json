@@ -1,63 +1,14 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-18T04:14:57.836Z",
-  "summary": "The diff implements most of the requested informational single-page structure with centralized editable content, a Documents section with empty-state, and a visible disclaimer in the footer. However, the required generated static images are only referenced (not shown as added), and there are unrequested additions such as Internet Identity/react-query actor scaffolding, an empty backend canister, and a caffeine.ai attribution link with UTM tracking.",
-  "missing_requirements": [
-    {
-      "id": "REQ-6",
-      "requirement": "Render any generated images as static assets from frontend/public/assets/generated and use them in the site (hero illustration and favicon).",
-      "reason": "The UI references the hero image and favicon paths, but the diff summary does not show the required image files being added under frontend/public/assets/generated.",
-      "evidence": [
-        "frontend/src/App.tsx (references /assets/generated/land-hero.dim_1600x900.png)",
-        "frontend/index.html (references /assets/generated/favicon-land.dim_128x128.png)"
-      ]
-    }
-  ],
-  "hallucinated_features": [
-    {
-      "description": "Internet Identity + React Query actor/auth scaffolding added (useInternetIdentity/useActor), despite the site being specified as informational and not requiring authentication.",
-      "reason": "BuildRequest explicitly says Internet Identity is supported but not required; no requirement asks for identity context, actor creation, or query invalidation logic.",
-      "evidence": [
-        "frontend/src/hooks/useInternetIdentity.ts",
-        "frontend/src/hooks/useActor.ts",
-        "frontend/src/main.tsx (wraps app in InternetIdentityProvider and QueryClientProvider)"
-      ]
-    },
-    {
-      "description": "Backend canister stub added (empty actor).",
-      "reason": "No requirements request any backend behavior; the Documents section should be static with no backend required.",
-      "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "description": "Footer includes a 'Built with caffeine.ai' outbound link with UTM tracking parameters.",
-      "reason": "BuildRequest does not request vendor attribution links or analytics/tracking parameters in the UI.",
-      "evidence": [
-        "frontend/src/components/SiteFooter.tsx"
-      ]
-    }
-  ],
+  "generatedAt": "2026-02-18T05:17:55.655Z",
+  "summary": "The diff summary indicates updates to frontend/src/content/siteContent.ts that include the requested plot (Dag) numbers for Hateberia (JL 167) and Radhaballabchak (JL 165), with no evidence of backend changes or edits under frontend/src/components/ui.",
+  "missing_requirements": [],
+  "hallucinated_features": [],
   "confidence": 0.74,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
-    "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/DocumentsSection.tsx",
-    "frontend/src/components/Section.tsx",
-    "frontend/src/components/SiteFooter.tsx",
-    "frontend/src/components/SiteHeader.tsx",
     "frontend/src/content/siteContent.ts",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useQueries.ts",
-    "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/tailwind.config.js",
     "project_state.json"
   ]
 }

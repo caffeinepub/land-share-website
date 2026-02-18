@@ -5,6 +5,38 @@ export interface Document {
   href: string;
 }
 
+// Property Details Data Model
+export interface Plot {
+  dagNo: string;
+  areaDecimals: number;
+}
+
+export interface KhatianReference {
+  number: string;
+  type?: string; // e.g., "RS", "Current", "Original"
+  notes?: string;
+}
+
+export interface PropertyRecord {
+  mouza: string;
+  block: string;
+  district: string;
+  state: string;
+  ps?: string; // Police Station (optional)
+  jl?: string; // JL number (optional)
+  khatianReferences: KhatianReference[];
+  plots: Plot[];
+  totalPlots?: number;
+  totalAcres?: number;
+  totalDecimals?: number;
+  notes?: string; // Narrative notes, placeholders, discrepancies
+}
+
+export interface PropertyCategory {
+  categoryName: string;
+  records: PropertyRecord[];
+}
+
 export const siteContent = {
   title: "Land Share Property Claim",
   subtitle: "Documenting our rightful ownership of family land property",
@@ -12,7 +44,7 @@ export const siteContent = {
   navigation: [
     { id: "introduction", label: "Introduction" },
     { id: "owners", label: "About Us" },
-    { id: "property", label: "Property" },
+    { id: "property", label: "Property Details" },
     { id: "claim", label: "Our Claim" },
     { id: "documents", label: "Documents" },
     { id: "contact", label: "Contact" }
@@ -34,18 +66,204 @@ export const siteContent = {
     ]
   },
 
-  property: {
-    title: "Property Overview",
-    content: [
-      "The property in question consists of land that has been part of our family holdings. Portions of this property are undisputed, with clear title and ownership records, while other portions are subject to ongoing legal clarification.",
-      "We maintain detailed records of property boundaries, historical ownership, and all relevant documentation supporting our claim to our rightful share."
-    ],
-    details: {
-      "Status": "Partially undisputed, partially under legal review",
-      "Type": "Land property",
-      "Ownership": "Inherited family property",
-      "Documentation": "Available upon request"
-    }
+  // Structured Property Details
+  propertyDetails: {
+    title: "Property Details",
+    categories: [
+      {
+        categoryName: "Undisputed Inherited Land/Property",
+        records: [
+          {
+            mouza: "Barbajitpur",
+            block: "Sutahata II",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            jl: "59",
+            khatianReferences: [
+              { number: "1094", type: "Khatian" }
+            ],
+            plots: [
+              { dagNo: "2", areaDecimals: 22 },
+              { dagNo: "45", areaDecimals: 22 },
+              { dagNo: "75", areaDecimals: 43 },
+              { dagNo: "154", areaDecimals: 2 },
+              { dagNo: "626", areaDecimals: 18 },
+              { dagNo: "696", areaDecimals: 14 },
+              { dagNo: "1276", areaDecimals: 0.00 },
+              { dagNo: "1283", areaDecimals: 0.03 },
+              { dagNo: "1286", areaDecimals: 0.00 },
+              { dagNo: "1287", areaDecimals: 0.01 },
+              { dagNo: "1288", areaDecimals: 0.01 },
+              { dagNo: "1296", areaDecimals: 0.01 },
+              { dagNo: "1297", areaDecimals: 0.01 },
+              { dagNo: "1299", areaDecimals: 0.07 },
+              { dagNo: "1300", areaDecimals: 0.03 },
+              { dagNo: "1298/2474", areaDecimals: 0.01 },
+              { dagNo: "2298/2475", areaDecimals: 0.03 },
+              { dagNo: "2298/2477", areaDecimals: 0.01 },
+              { dagNo: "113/2576", areaDecimals: 0.15 }
+            ],
+            totalPlots: 19,
+            totalAcres: 1.67,
+            notes: "Location (A): At Mouza Barbajitpur, Block Sutahata II, Dist Purba Medinipur, State West Bengal."
+          },
+          {
+            mouza: "Kumarpur",
+            block: "Sutahata II",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            ps: "Sutahata",
+            jl: "58",
+            khatianReferences: [
+              { number: "2120", type: "Khatian" }
+            ],
+            plots: [
+              { dagNo: "2477", areaDecimals: 73 },
+              { dagNo: "2634", areaDecimals: 58 },
+              { dagNo: "1963/3802", areaDecimals: 45 }
+            ],
+            totalPlots: 3,
+            totalAcres: 1.76,
+            notes: "Location (B): At Mouza Kumarpur, Block Sutahata II, Dist Purba Medinipur, West Bengal."
+          },
+          {
+            mouza: "Barbajitpur",
+            block: "Sutahata II",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            khatianReferences: [
+              { number: "109", type: "Khatian" }
+            ],
+            plots: [
+              { dagNo: "963", areaDecimals: 20 }
+            ],
+            totalPlots: 1,
+            totalDecimals: 20,
+            notes: "Location (C): At Barbajitpur, Block Sutahata II, Dist Purba Medinipur, West Bengal. Grand total of all undisputed plots: 23 with 3.63 acres."
+          }
+        ]
+      },
+      {
+        categoryName: "Disputed Land/Property Yet to be Mutated",
+        records: [
+          {
+            mouza: "Mrinalnagar",
+            block: "Kakdwip",
+            district: "South 24 Parganas",
+            state: "West Bengal",
+            khatianReferences: [
+              { number: "400/476 & 3233", type: "Original Khatian & Dag No." },
+              { number: "255", type: "Current Khatian" }
+            ],
+            plots: [
+              { dagNo: "3233", areaDecimals: 13 },
+              { dagNo: "3234", areaDecimals: 272 },
+              { dagNo: "2777", areaDecimals: 0 },
+              { dagNo: "2778", areaDecimals: 0 },
+              { dagNo: "2779", areaDecimals: 0 },
+              { dagNo: "2780", areaDecimals: 0 },
+              { dagNo: "2781", areaDecimals: 0 },
+              { dagNo: "2781/6512", areaDecimals: 0 }
+            ],
+            totalPlots: 7,
+            totalAcres: 0.064,
+            notes: "Original total: 2.85 acres (13 Dec + 2.72 Dec). Our father Late Sudhamoy Khutia was the owner of 85 Decimal as per Deed vide No. [PLACEHOLDER: deed number] dt. [PLACEHOLDER: deed date]. Current Khatian No. is 255. Currently as per Banglarbhumi app: Total plots 7 with 0.064 acres (Dag No. 2777, 2778, 2779, 2780, 2781 & 2781/6512). Discrepancy observed between original records and current Banglarbhumi app data."
+          }
+        ]
+      },
+      {
+        categoryName: "Disputed Land & Property with Maternal Uncles",
+        records: [
+          {
+            mouza: "Hateberia",
+            block: "Sutahata II",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            ps: "Bhawanipur/Haldia",
+            jl: "167",
+            khatianReferences: [
+              { number: "546", type: "RS Khatian" },
+              { number: "263", type: "RS Khatian" }
+            ],
+            plots: [
+              { dagNo: "1", areaDecimals: 0 },
+              { dagNo: "2", areaDecimals: 0 },
+              { dagNo: "3", areaDecimals: 0 },
+              { dagNo: "4", areaDecimals: 0 },
+              { dagNo: "5", areaDecimals: 0 },
+              { dagNo: "6", areaDecimals: 0 },
+              { dagNo: "7", areaDecimals: 0 },
+              { dagNo: "8", areaDecimals: 0 },
+              { dagNo: "9", areaDecimals: 0 },
+              { dagNo: "10", areaDecimals: 0 },
+              { dagNo: "11", areaDecimals: 0 },
+              { dagNo: "22", areaDecimals: 0 },
+              { dagNo: "23", areaDecimals: 0 },
+              { dagNo: "25", areaDecimals: 0 },
+              { dagNo: "26", areaDecimals: 0 },
+              { dagNo: "27", areaDecimals: 0 },
+              { dagNo: "28", areaDecimals: 0 },
+              { dagNo: "3/5726", areaDecimals: 0 },
+              { dagNo: "3/5727", areaDecimals: 0 },
+              { dagNo: "3/5728", areaDecimals: 0 },
+              { dagNo: "3/5729", areaDecimals: 0 },
+              { dagNo: "3/5730", areaDecimals: 0 },
+              { dagNo: "10/5731", areaDecimals: 0 }
+            ],
+            totalPlots: 47,
+            totalAcres: 6.09,
+            notes: "Khatian RS 546, JL 167: 24 plots with 4.84 acres. Khatian RS 263, JL 167: 23 plots with 1.25 acres. My deceased mother late Kananbala Khutia w/o deceased Late Sudhamoy Khutia & D/o deceased late Nanigopal Maji of Vill: Hateberia & Radhaballabchak, is the legal owner of 1/8 share of this entire Land/Property. An appeal case is being initiated in the Court of Appellate Authority, O/o ADM & DL & LRO/Purba Medinipur/West Bengal on [PLACEHOLDER: appeal initiation date] against maternal uncles of Hateberia & Radhaballabchak."
+          },
+          {
+            mouza: "Radhaballabchak",
+            block: "Sutahata II",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            ps: "Bhawanipur/Haldia",
+            khatianReferences: [
+              { number: "320", type: "RS Khatian" },
+              { number: "145", type: "Khatian", notes: "JL 165" }
+            ],
+            plots: [
+              { dagNo: "22", areaDecimals: 0 },
+              { dagNo: "23", areaDecimals: 0 },
+              { dagNo: "22/894", areaDecimals: 0 },
+              { dagNo: "22/966", areaDecimals: 0 },
+              { dagNo: "22/967", areaDecimals: 0 },
+              { dagNo: "22/969", areaDecimals: 0 },
+              { dagNo: "22/970", areaDecimals: 0 },
+              { dagNo: "22/971", areaDecimals: 0 }
+            ],
+            totalPlots: 18,
+            totalAcres: 10.53,
+            notes: "Khatian RS 320: 10 plots with 9.35 acres. Khatian No. 145, JL 165: 8 plots with 1.18 acres. My deceased mother late Kananbala Khutia w/o deceased Late Sudhamoy Khutia & D/o deceased late Nanigopal Maji of Vill: Hateberia & Radhaballabchak, is the legal owner of 1/8 share of this entire Land/Property. An appeal case is being initiated in the Court of Appellate Authority, O/o ADM & DL & LRO/Purba Medinipur/West Bengal on [PLACEHOLDER: appeal initiation date] against maternal uncles of Hateberia & Radhaballabchak."
+          }
+        ]
+      },
+      {
+        categoryName: "Other Land/Property - Missing in Banglarbhumi App",
+        records: [
+          {
+            mouza: "Jalpai (5th Bhukhanda)",
+            block: "Nandigram",
+            district: "Purba Medinipur",
+            state: "West Bengal",
+            khatianReferences: [
+              { number: "222", type: "Khatian" }
+            ],
+            plots: [
+              { dagNo: "564", areaDecimals: 0 },
+              { dagNo: "565", areaDecimals: 0 },
+              { dagNo: "566", areaDecimals: 0 },
+              { dagNo: "567", areaDecimals: 0 }
+            ],
+            totalPlots: 4,
+            totalDecimals: 58.5,
+            notes: "Land about 58 & 1/2 Decimal of land, out of which 19 & 1/2 Dec owned by father late Sudhamoy Khutia under Khatian 222, plots 564, 565, 566 & 567 at Jalpai (5th Bhukhanda), Block Nandigram, Purba Medinipur, West Bengal. Plots are now missing in Banglarbhumi App."
+          }
+        ]
+      }
+    ] as PropertyCategory[]
   },
 
   claim: {

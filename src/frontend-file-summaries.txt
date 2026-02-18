@@ -1,12 +1,13 @@
 {
-  "frontend/src/App.tsx": "Main application component rendering a single-page informational website with hero section, introduction, owners info, property overview, claim summary, documents section, and contact information, all consuming centralized content.",
+  "frontend/src/App.tsx": "Main application component rendering a single-page informational website with hero section, introduction, owners info, the new PropertyDetailsSection component for structured property details, claim summary, documents section, and contact information.",
   "frontend/src/components/SiteHeader.tsx": "Sticky header component with site title and smooth-scroll navigation to page sections, including responsive mobile menu.",
   "frontend/src/components/SiteFooter.tsx": "Footer component displaying disclaimer, copyright, and attribution with caffeine.ai link including UTM tracking.",
   "frontend/src/components/Section.tsx": "Reusable section wrapper component providing consistent title, spacing, and layout structure for all major page sections.",
   "frontend/src/components/DocumentsSection.tsx": "Documents section component that displays a list of document links with metadata or shows an empty state message when no documents are available, now with proper TypeScript typing for Document interface.",
-  "frontend/src/content/siteContent.ts": "Centralized content file with Document interface type definition, containing all user-facing text, navigation items, property details, and typed document metadata array for easy editing without touching layout code.",
+  "frontend/src/content/siteContent.ts": "Centralized content file with TypeScript interfaces for structured property details and complete property data organized into four categories, now including populated plot lists for Hateberia JL 167 (23 plots: 1-11, 22-23, 25-28, 3/5726-3/5730, 10/5731) and Radhaballabchak JL 165 (8 plots: 22, 23, 22/894, 22/966-22/971) with all user-provided khatian references, totals, and notes.",
   "frontend/src/index.css": "Global styles with earth-tone OKLCH color system (warm browns, sands, and beiges) for both light and dark modes, plus typography hierarchy and base element styling.",
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with Inter/Merriweather fonts, earth-tone color tokens, and custom spacing/shadow utilities.",
   "frontend/index.html": "HTML entry point with favicon link and meta tags for the land share property claim website.",
-  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks when backend integration is needed; currently empty as the site is purely informational."
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks when backend integration is needed; currently empty as the site is purely informational.",
+  "frontend/src/components/PropertyDetailsSection.tsx": "New component that renders structured property records organized by category, displaying location details, khatian references as badges, collapsible plot lists in a grid, totals in highlighted boxes, and notes/remarks sections with proper TypeScript typing for all property data structures."
 }
