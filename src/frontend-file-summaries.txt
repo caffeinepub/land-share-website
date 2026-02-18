@@ -1,0 +1,12 @@
+{
+  "frontend/src/App.tsx": "Main application component rendering a single-page informational website with hero section, introduction, owners info, property overview, claim summary, documents section, and contact information, all consuming centralized content.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header component with site title and smooth-scroll navigation to page sections, including responsive mobile menu.",
+  "frontend/src/components/SiteFooter.tsx": "Footer component displaying disclaimer, copyright, and attribution with caffeine.ai link including UTM tracking.",
+  "frontend/src/components/Section.tsx": "Reusable section wrapper component providing consistent title, spacing, and layout structure for all major page sections.",
+  "frontend/src/components/DocumentsSection.tsx": "Documents section component that displays a list of document links with metadata or shows an empty state message when no documents are available, now with proper TypeScript typing for Document interface.",
+  "frontend/src/content/siteContent.ts": "Centralized content file with Document interface type definition, containing all user-facing text, navigation items, property details, and typed document metadata array for easy editing without touching layout code.",
+  "frontend/src/index.css": "Global styles with earth-tone OKLCH color system (warm browns, sands, and beiges) for both light and dark modes, plus typography hierarchy and base element styling.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme with Inter/Merriweather fonts, earth-tone color tokens, and custom spacing/shadow utilities.",
+  "frontend/index.html": "HTML entry point with favicon link and meta tags for the land share property claim website.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks when backend integration is needed; currently empty as the site is purely informational."
+}

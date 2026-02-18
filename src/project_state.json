@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website project for siblings to present information about their rightful share of an undisputed/disputed land property.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Formal minimalist hero illustration depicting land boundaries and a document motif in neutral earth tones (land-hero.dim_1600x900.png)\n- Simple neutral favicon showing a minimal land-plot icon in monochrome/earth tone (favicon-land.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-simple-responsive-informational-website-single-page-or-a-few-pages-that-presents-the-owners-claim-to-a-rightful-share-of-a-land-property-written-in-clear-english",
+      "title": "Create a simple, responsive informational website (single-page or a few pages) that presents the owners’ claim to a rightful share of a land property, written in clear English.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-clear-content-editing-pattern-so-the-owners-can-update-website-text-without-touching-layout-code-e-g-a-single-structured-content-file-consumed-by-the-pages-sections",
+      "title": "Add a clear content-editing pattern so the owners can update website text without touching layout code (e.g., a single structured content file consumed by the pages/sections).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-include-a-documents-references-section-that-can-display-a-list-of-document-links-e-g-pdfs-or-images-served-as-static-assets-with-title-date-optional-and-a-short-description-for-each-item",
+      "title": "Include a “Documents / References” section that can display a list of document links (e.g., PDFs or images) served as static assets, with title, date (optional), and a short description for each item.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-visible-disclaimer-section-stating-the-website-is-for-informational-purposes-only-and-does-not-constitute-legal-advice-and-that-claims-are-presented-as-the-owners-position",
+      "title": "Add a visible disclaimer section stating the website is for informational purposes only and does not constitute legal advice, and that claims are presented as the owners’ position.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-and-apply-a-coherent-visual-theme-colors-typography-spacing-and-component-styling-suitable-for-a-formal-property-claim-informational-site-and-use-it-consistently-across-the-website-avoid-blue-purple-palettes-unless-explicitly-requested-later",
+      "title": "Define and apply a coherent visual theme (colors, typography, spacing, and component styling) suitable for a formal property/claim informational site, and use it consistently across the website (avoid blue/purple palettes unless explicitly requested later).",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-any-generated-images-as-static-assets-from-frontend-public-assets-generated-and-use-them-in-the-site-e-g-hero-illustration-and-favicon",
+      "title": "Render any generated images as static assets from frontend/public/assets/generated and use them in the site (e.g., hero illustration and favicon).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a website to present information about siblings' rightful share of an undisputed/disputed land property.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Land Share Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

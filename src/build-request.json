@@ -1,0 +1,119 @@
+{
+  "kind": "build_request",
+  "title": "Informational website for land property share claim",
+  "projectName": "Land Share Website",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a simple, responsive informational website (single-page or a few pages) that presents the owners’ claim to a rightful share of a land property, written in clear English.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "I am along with my sibling are the owners of rightful share  of  some undisputed /disputed  land property  and  as such  I just need a              ' ' website \""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Site loads successfully and is navigable on mobile and desktop.",
+        "All user-facing text is in English.",
+        "Content structure includes at minimum: (1) Intro/summary, (2) About the owners (siblings), (3) Property overview, (4) Claim summary (undisputed/disputed context), (5) Contact section.",
+        "Copy uses neutral, factual wording (no inflammatory language)."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a clear content-editing pattern so the owners can update website text without touching layout code (e.g., a single structured content file consumed by the pages/sections).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "There is a single, obvious place in the frontend codebase to edit the main website text content.",
+        "Updating the content file updates the rendered site without requiring edits across multiple components."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Include a “Documents / References” section that can display a list of document links (e.g., PDFs or images) served as static assets, with title, date (optional), and a short description for each item.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Documents section renders a list of items with at least: document title and a clickable link.",
+        "Document links point to static assets in the frontend build (no backend required).",
+        "If no documents are provided yet, the UI displays a clean empty-state message in English."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add a visible disclaimer section stating the website is for informational purposes only and does not constitute legal advice, and that claims are presented as the owners’ position.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Disclaimer is visible from the main page (either as a section or in the footer).",
+        "Disclaimer text is written in clear English and avoids legal guarantees."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Define and apply a coherent visual theme (colors, typography, spacing, and component styling) suitable for a formal property/claim informational site, and use it consistently across the website (avoid blue/purple palettes unless explicitly requested later).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme is consistent across sections (headings, body text, cards/sections, buttons/links).",
+        "Color palette is not primarily blue/purple.",
+        "Typography hierarchy is clear (at least H1/H2/body styles are distinguishable)."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render any generated images as static assets from frontend/public/assets/generated and use them in the site (e.g., hero illustration and favicon).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images exist under frontend/public/assets/generated and are referenced by the UI.",
+        "Hero/brand image is visible on the site.",
+        "Favicon is set and visible in the browser tab."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for any user-facing text.",
+    "Frontend immutable paths (as defined by the platform) must not be edited; compose existing UI components instead of modifying read-only component sources.",
+    "Do not add third-party authentication; only Internet Identity is supported (and is not required for this informational website).",
+    "Do not introduce external databases or external hosting dependencies; serve documents as static frontend assets if included."
+  ],
+  "nonGoals": [
+    "Providing legal advice or legal conclusions about the property dispute.",
+    "Building a full case-management system (e.g., evidence workflows, party messaging, court filing).",
+    "User accounts, role-based admin panels, or private document vaults (unless explicitly requested later).",
+    "Real-time chat or notification systems."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Formal minimalist hero illustration depicting land boundaries and a document motif in neutral earth tones (land-hero.dim_1600x900.png)",
+      "Simple neutral favicon showing a minimal land-plot icon in monochrome/earth tone (favicon-land.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

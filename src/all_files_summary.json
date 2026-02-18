@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no methods defined.",
+  "feature_evidence.json": "Feature report JSON mapping implemented features to source files, components, and test IDs.",
+  "frontend-file-summaries.txt": "Lookup file providing brief one‑sentence summaries of key frontend source files.",
+  "frontend/index.css": "Tailwind base stylesheet defining earth‑tone OKLCH theme tokens and global element styling for light and dark modes.",
+  "frontend/index.html": "HTML entry point that loads the React app and includes favicon and metadata for the land‑claim website.",
+  "frontend/src/App.tsx": "Main React component rendering all site sections by consuming structured content from siteContent.",
+  "frontend/src/components/DocumentsSection.tsx": "Shows a documents list or an empty state using metadata from siteContent.",
+  "frontend/src/components/Section.tsx": "Reusable wrapper component that provides consistent section layout, heading, and spacing.",
+  "frontend/src/components/SiteFooter.tsx": "Footer with a disclaimer, copyright line, and caffeine.ai attribution link.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header with scroll‑aware styling, navigation buttons, and a mobile menu.",
+  "frontend/src/content/siteContent.ts": "Defines the site’s structured content, including navigation, section text, property details, documents, and contact info.",
+  "frontend/src/hooks/useActor.ts": "Provides a React Query hook that creates and refreshes a backend actor based on the user's Internet Identity.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements an authentication context and provider for managing Internet Identity login, logout, and stored identities.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future backend-related React Query hooks; currently exports nothing.",
+  "frontend/src/index.css": "Sets Tailwind base styles and custom earth-tone CSS variables for light and dark themes.",
+  "frontend/src/main.tsx": "Bootstraps the React app, wrapping it with QueryClientProvider and InternetIdentityProvider.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending theme colors, fonts, layout, and enabling plugins.",
+  "project_state.json": "Describes project metadata, features, requirements, and image needs for the land-share informational website."
+}
