@@ -1,0 +1,21 @@
+{
+  "backend/main.mo": "Empty Motoko actor serving as the backend entry point with no implemented functionality.",
+  "feature_evidence.json": "Feature evidence report mapping two features (app redeployment and contact email display) to their implementing files, components, and test IDs.",
+  "frontend-file-summaries.txt": "JSON document containing one-line summaries of each frontend source file describing their purpose and key implementation details.",
+  "frontend/index.css": "Global Tailwind CSS stylesheet defining OKLCH-based CSS custom properties for light and dark color themes including background, foreground, and UI component tokens.",
+  "frontend/index.html": "HTML entry point for the Land Share Property Claim site, loading the React app via main.tsx with favicon and meta description tags.",
+  "frontend/src/App.tsx": "Root React component composing the full single-page layout with header, hero, introduction, owners, property details, claim summary, documents, contact sections, and footer.",
+  "frontend/src/components/DocumentsSection.tsx": "Renders a grid of clickable document cards from siteContent, or an empty-state placeholder with an icon when no documents exist.",
+  "frontend/src/components/PropertyDetailsSection.tsx": "Displays structured property records grouped by category using Cards, Badges, and collapsible Accordions for plot lists, totals, and notes.",
+  "frontend/src/components/Section.tsx": "Generic reusable section wrapper that renders a titled, optionally subtitled content block with consistent padding and max-width constraints.",
+  "frontend/src/components/SiteFooter.tsx": "Footer component showing a disclaimer box, a clickable mailto link for khutiaashim@gmail.com, copyright notice, and a caffeine.ai attribution link.",
+  "frontend/src/components/SiteHeader.tsx": "Sticky header with the site title, smooth-scroll desktop navigation buttons, and a toggleable mobile navigation menu that reacts to scroll position.",
+  "frontend/src/content/siteContent.ts": "Defines TypeScript interfaces and the main `siteContent` object containing all site text, navigation, and structured property data (plots, khatian references, categories) for the land claim website.",
+  "frontend/src/hooks/useActor.ts": "Custom React hook that creates and caches an ICP backend actor (authenticated or anonymous) using React Query, and invalidates dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides an `InternetIdentityProvider` context and `useInternetIdentity` hook for managing ICP Internet Identity authentication, including login, logout, and identity persistence via `AuthClient`.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file reserving space for future React Query hooks for backend integration; currently exports nothing functional.",
+  "frontend/src/index.css": "Global CSS file that sets up Tailwind directives and defines an earth-tone OKLCH CSS custom property color palette for both light and dark modes, plus base typography styles.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app with `QueryClientProvider` and `InternetIdentityProvider` wrappers around the root `App` component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration extending the theme with OKLCH-based semantic color tokens, custom font families (Inter, Merriweather), border radii, accordion keyframes, and plugins for typography, container queries, and animations.",
+  "project_state.json": "Project state metadata tracking schema version, existing features, and a pending action request to add a contact email (khutiaashim@gmail.com) to the Property Draft Site."
+}

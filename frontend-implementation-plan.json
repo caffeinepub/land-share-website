@@ -1,0 +1,59 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Rebuild expired draft app and add contact email",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Rebuild and redeploy the existing draft application in its current state so it is accessible for review",
+      "acceptanceCriteria": [
+        "The application builds and deploys successfully without errors.",
+        "All existing sections (hero, content sections, documents, property details, header, footer) render correctly."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Review and verify the main app structure composes all sections correctly. Ensure hero, content sections, documents, property details, header, and footer are all rendered. No functional changes needed; validate existing structure is intact for successful rebuild."
+        },
+        {
+          "path": "frontend/src/components/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Review and verify the header component renders correctly with navigation and mobile menu functionality. No functional changes needed; validate existing structure is intact for successful rebuild."
+        },
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Review and verify the footer component renders correctly with disclaimer, copyright, and caffeine.ai attribution. Prepare this file for the contact email addition in REQ-2."
+        },
+        {
+          "path": "frontend/src/components/DocumentsSection.tsx",
+          "operation": "modify",
+          "description": "Review and verify the documents section renders correctly with document cards and icons. No functional changes needed; validate existing structure is intact for successful rebuild."
+        },
+        {
+          "path": "frontend/src/components/PropertyDetailsSection.tsx",
+          "operation": "modify",
+          "description": "Review and verify the property details section renders correctly with structured categories, records, cards, accordions, and badges. No functional changes needed; validate existing structure is intact for successful rebuild."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add contact email khutiaashim@gmail.com as a clickable mailto link in the footer",
+      "acceptanceCriteria": [
+        "The email address khutiaashim@gmail.com is visible on the page.",
+        "The email is rendered as a clickable mailto:khutiaashim@gmail.com link.",
+        "The contact email is labeled clearly (e.g., 'Contact:' or 'Email:') so visitors understand its purpose.",
+        "The email link is styled consistently with the existing site theme."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SiteFooter.tsx",
+          "operation": "modify",
+          "description": "Add the contact email khutiaashim@gmail.com as a clickable mailto link in the footer. Place it prominently above or within the existing disclaimer/copyright section. Wrap the email in a mailto: anchor tag with clear labeling (e.g., 'Contact:' or 'Email:'). Style the link consistently with the existing footer theme using appropriate text color classes from the Tailwind config. Ensure the email is easily visible and accessible to visitors."
+        }
+      ]
+    }
+  ]
+}

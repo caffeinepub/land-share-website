@@ -1,0 +1,57 @@
+{
+  "kind": "build_request",
+  "title": "Rebuild expired draft app and add contact email",
+  "projectName": "Property Draft Site",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Rebuild and redeploy the existing draft application in its current state so it is accessible for review.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Rebuild my expired draft app and add my email address khutiaashim@gmail.com as my contact email"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The application builds and deploys successfully without errors.",
+        "All existing sections (hero, content sections, documents, property details, header, footer) render correctly."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add the contact email address khutiaashim@gmail.com to the website. Display it prominently as a clickable mailto link in an appropriate location such as the site footer or a dedicated contact section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "add my email address khutiaashim@gmail.com as my contact email"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The email address khutiaashim@gmail.com is visible on the page.",
+        "The email is rendered as a clickable mailto:khutiaashim@gmail.com link.",
+        "The contact email is labeled clearly (e.g., 'Contact:' or 'Email:') so visitors understand its purpose.",
+        "The email link is styled consistently with the existing site theme."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not alter the existing content, layout, or visual theme beyond adding the contact email.",
+    "Do not modify files listed in frontend.immutablePaths."
+  ],
+  "nonGoals": [
+    "Adding a full contact form or any backend email-sending functionality.",
+    "Changing any property data, documents, or other existing site content.",
+    "Redesigning or restyling the site."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

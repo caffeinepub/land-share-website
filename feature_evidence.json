@@ -1,0 +1,41 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-rebuild-and-redeploy-the-existing-draft-application-in-its-current-state-so-it-is-accessible-for-review",
+      "featureTitle": "Rebuild and redeploy the existing draft application in its current state so it is accessible for review.",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-contact-email-address-khutiaashim-gmail-com-to-the-website-display-it-prominently-as-a-clickable-mailto-link-in-an-appropriate-location-such-as-the-site-footer-or-a-dedicated-contact-section",
+      "featureTitle": "Add the contact email address khutiaashim@gmail.com to the website. Display it prominently as a clickable mailto link in an appropriate location such as the site footer or a dedicated contact section.",
+      "files": [
+        "frontend/src/components/SiteFooter.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

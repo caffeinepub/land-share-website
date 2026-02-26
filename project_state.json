@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-rebuild-and-redeploy-the-existing-draft-application-in-its-current-state-so-it-is-accessible-for-review",
+      "title": "Rebuild and redeploy the existing draft application in its current state so it is accessible for review.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-contact-email-address-khutiaashim-gmail-com-to-the-website-display-it-prominently-as-a-clickable-mailto-link-in-an-appropriate-location-such-as-the-site-footer-or-a-dedicated-contact-section",
+      "title": "Add the contact email address khutiaashim@gmail.com to the website. Display it prominently as a clickable mailto link in an appropriate location such as the site footer or a dedicated contact section.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add contact email khutiaashim@gmail.com to the website",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Property Draft Site",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
