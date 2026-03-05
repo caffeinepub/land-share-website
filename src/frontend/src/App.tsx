@@ -1,23 +1,23 @@
-import SiteHeader from './components/SiteHeader';
-import SiteFooter from './components/SiteFooter';
-import Section from './components/Section';
-import DocumentsSection from './components/DocumentsSection';
-import PropertyDetailsSection from './components/PropertyDetailsSection';
-import { siteContent } from './content/siteContent';
+import DocumentsSection from "./components/DocumentsSection";
+import PropertyDetailsSection from "./components/PropertyDetailsSection";
+import Section from "./components/Section";
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+import { siteContent } from "./content/siteContent";
 
 function App() {
   return (
     <div className="min-h-screen flex flex-col bg-background">
       <SiteHeader />
-      
+
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative bg-gradient-to-b from-accent/30 to-background">
           <div className="container mx-auto px-4 py-16 md:py-24">
             <div className="max-w-5xl mx-auto">
               <div className="mb-12">
-                <img 
-                  src="/assets/generated/land-hero.dim_1600x900.png" 
+                <img
+                  src="/assets/generated/land-hero.dim_1600x900.png"
                   alt="Land property boundaries illustration"
                   className="w-full h-auto rounded-lg shadow-lg"
                 />
@@ -35,13 +35,10 @@ function App() {
         </section>
 
         {/* Introduction Section */}
-        <Section 
-          id="introduction"
-          title={siteContent.introduction.title}
-        >
+        <Section id="introduction" title={siteContent.introduction.title}>
           <div className="prose prose-lg max-w-none text-foreground">
-            {siteContent.introduction.content.map((paragraph, index) => (
-              <p key={index} className="mb-4 leading-relaxed">
+            {siteContent.introduction.content.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="mb-4 leading-relaxed">
                 {paragraph}
               </p>
             ))}
@@ -49,14 +46,14 @@ function App() {
         </Section>
 
         {/* About Owners Section */}
-        <Section 
+        <Section
           id="owners"
           title={siteContent.owners.title}
           className="bg-accent/20"
         >
           <div className="prose prose-lg max-w-none text-foreground">
-            {siteContent.owners.content.map((paragraph, index) => (
-              <p key={index} className="mb-4 leading-relaxed">
+            {siteContent.owners.content.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="mb-4 leading-relaxed">
                 {paragraph}
               </p>
             ))}
@@ -67,14 +64,14 @@ function App() {
         <PropertyDetailsSection />
 
         {/* Claim Summary Section */}
-        <Section 
+        <Section
           id="claim"
           title={siteContent.claim.title}
           className="bg-accent/20"
         >
           <div className="prose prose-lg max-w-none text-foreground">
-            {siteContent.claim.content.map((paragraph, index) => (
-              <p key={index} className="mb-4 leading-relaxed">
+            {siteContent.claim.content.map((paragraph) => (
+              <p key={paragraph.slice(0, 40)} className="mb-4 leading-relaxed">
                 {paragraph}
               </p>
             ))}
@@ -85,15 +82,14 @@ function App() {
         <DocumentsSection />
 
         {/* Contact Section */}
-        <Section 
-          id="contact"
-          title={siteContent.contact.title}
-        >
+        <Section id="contact" title={siteContent.contact.title}>
           <div className="prose prose-lg max-w-none text-foreground">
-            <p className="mb-6 leading-relaxed">{siteContent.contact.content}</p>
+            <p className="mb-6 leading-relaxed">
+              {siteContent.contact.content}
+            </p>
             {siteContent.contact.email && (
               <div className="mt-6">
-                <a 
+                <a
                   href={`mailto:${siteContent.contact.email}`}
                   className="inline-flex items-center px-6 py-3 bg-primary text-primary-foreground font-medium rounded-md hover:bg-primary/90 transition-colors"
                 >

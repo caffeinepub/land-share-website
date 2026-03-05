@@ -6,7 +6,13 @@ interface SectionProps {
   className?: string;
 }
 
-export default function Section({ id, title, subtitle, children, className = '' }: SectionProps) {
+export default function Section({
+  id,
+  title,
+  subtitle,
+  children,
+  className = "",
+}: SectionProps) {
   return (
     <section id={id} className={`py-16 md:py-20 ${className}`}>
       <div className="container mx-auto px-4">
@@ -16,14 +22,10 @@ export default function Section({ id, title, subtitle, children, className = '' 
               {title}
             </h2>
             {subtitle && (
-              <p className="text-lg text-muted-foreground">
-                {subtitle}
-              </p>
+              <p className="text-lg text-muted-foreground">{subtitle}</p>
             )}
           </div>
-          <div className="text-foreground">
-            {children}
-          </div>
+          <div className="text-foreground">{children}</div>
         </div>
       </div>
     </section>

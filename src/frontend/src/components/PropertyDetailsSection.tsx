@@ -1,8 +1,13 @@
-import { siteContent } from '@/content/siteContent';
-import type { PropertyRecord, PropertyCategory } from '@/content/siteContent';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { siteContent } from "@/content/siteContent";
+import type { PropertyCategory, PropertyRecord } from "@/content/siteContent";
 
 function PropertyRecordCard({ record }: { record: PropertyRecord }) {
   return (
@@ -12,20 +17,38 @@ function PropertyRecordCard({ record }: { record: PropertyRecord }) {
           {record.mouza}, {record.block}
         </CardTitle>
         <div className="text-sm text-muted-foreground space-y-1 mt-2">
-          <p><span className="font-medium">District:</span> {record.district}</p>
-          <p><span className="font-medium">State:</span> {record.state}</p>
-          {record.ps && <p><span className="font-medium">PS:</span> {record.ps}</p>}
-          {record.jl && <p><span className="font-medium">JL:</span> {record.jl}</p>}
+          <p>
+            <span className="font-medium">District:</span> {record.district}
+          </p>
+          <p>
+            <span className="font-medium">State:</span> {record.state}
+          </p>
+          {record.ps && (
+            <p>
+              <span className="font-medium">PS:</span> {record.ps}
+            </p>
+          )}
+          {record.jl && (
+            <p>
+              <span className="font-medium">JL:</span> {record.jl}
+            </p>
+          )}
         </div>
       </CardHeader>
       <CardContent className="space-y-4">
         {/* Khatian References */}
         <div>
-          <h4 className="font-semibold text-sm mb-2 text-foreground">Khatian References:</h4>
+          <h4 className="font-semibold text-sm mb-2 text-foreground">
+            Khatian References:
+          </h4>
           <div className="flex flex-wrap gap-2">
-            {record.khatianReferences.map((khatian, idx) => (
-              <Badge key={idx} variant="outline" className="text-xs">
-                {khatian.type ? `${khatian.type}: ` : ''}
+            {record.khatianReferences.map((khatian) => (
+              <Badge
+                key={`${khatian.type}-${khatian.number}`}
+                variant="outline"
+                className="text-xs"
+              >
+                {khatian.type ? `${khatian.type}: ` : ""}
                 {khatian.number}
                 {khatian.notes && ` (${khatian.notes})`}
               </Badge>
@@ -42,10 +65,15 @@ function PropertyRecordCard({ record }: { record: PropertyRecord }) {
               </AccordionTrigger>
               <AccordionContent>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 pt-2">
-                  {record.plots.map((plot, idx) => (
-                    <div key={idx} className="text-xs bg-muted/50 p-2 rounded border border-border">
-                      <span className="font-medium">Dag {plot.dagNo}:</span>{' '}
-                      <span className="text-muted-foreground">{plot.areaDecimals} Dec</span>
+                  {record.plots.map((plot) => (
+                    <div
+                      key={plot.dagNo}
+                      className="text-xs bg-muted/50 p-2 rounded border border-border"
+                    >
+                      <span className="font-medium">Dag {plot.dagNo}:</span>{" "}
+                      <span className="text-muted-foreground">
+                        {plot.areaDecimals} Dec
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -56,16 +84,27 @@ function PropertyRecordCard({ record }: { record: PropertyRecord }) {
 
         {/* Totals */}
         <div className="bg-accent/20 p-4 rounded-md border border-border">
-          <h4 className="font-semibold text-sm mb-2 text-foreground">Totals:</h4>
+          <h4 className="font-semibold text-sm mb-2 text-foreground">
+            Totals:
+          </h4>
           <div className="text-sm space-y-1">
             {record.totalPlots !== undefined && (
-              <p><span className="font-medium">Total Plots:</span> {record.totalPlots}</p>
+              <p>
+                <span className="font-medium">Total Plots:</span>{" "}
+                {record.totalPlots}
+              </p>
             )}
             {record.totalAcres !== undefined && (
-              <p><span className="font-medium">Total Area:</span> {record.totalAcres} acres</p>
+              <p>
+                <span className="font-medium">Total Area:</span>{" "}
+                {record.totalAcres} acres
+              </p>
             )}
             {record.totalDecimals !== undefined && (
-              <p><span className="font-medium">Total Area:</span> {record.totalDecimals} decimals</p>
+              <p>
+                <span className="font-medium">Total Area:</span>{" "}
+                {record.totalDecimals} decimals
+              </p>
             )}
           </div>
         </div>
@@ -73,7 +112,9 @@ function PropertyRecordCard({ record }: { record: PropertyRecord }) {
         {/* Notes/Remarks */}
         {record.notes && (
           <div className="bg-muted/30 p-4 rounded-md border border-border">
-            <h4 className="font-semibold text-sm mb-2 text-foreground">Notes/Remarks:</h4>
+            <h4 className="font-semibold text-sm mb-2 text-foreground">
+              Notes/Remarks:
+            </h4>
             <p className="text-sm text-muted-foreground leading-relaxed whitespace-pre-line">
               {record.notes}
             </p>
@@ -90,9 +131,19 @@ function PropertyCategorySection({ category }: { category: PropertyCategory }) {
       <h3 className="text-2xl font-bold text-foreground mb-6 pb-2 border-b-2 border-primary">
         {category.categoryName}
       </h3>
+
+      {/* Category Description - displayed directly under heading if present */}
+      {category.categoryDescription && (
+        <div className="mb-6 p-4 bg-accent/10 border-l-4 border-primary rounded-r-md">
+          <p className="text-sm leading-relaxed text-foreground">
+            {category.categoryDescription}
+          </p>
+        </div>
+      )}
+
       <div>
-        {category.records.map((record, idx) => (
-          <PropertyRecordCard key={idx} record={record} />
+        {category.records.map((record) => (
+          <PropertyRecordCard key={record.mouza + record.jl} record={record} />
         ))}
       </div>
     </div>
@@ -112,8 +163,11 @@ export default function PropertyDetailsSection() {
             </h2>
           </div>
           <div>
-            {propertyDetails.categories.map((category, idx) => (
-              <PropertyCategorySection key={idx} category={category} />
+            {propertyDetails.categories.map((category) => (
+              <PropertyCategorySection
+                key={category.categoryName}
+                category={category}
+              />
             ))}
           </div>
         </div>

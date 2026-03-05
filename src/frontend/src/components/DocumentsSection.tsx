@@ -1,15 +1,12 @@
-import { FileText } from 'lucide-react';
-import Section from './Section';
-import { siteContent, type Document } from '../content/siteContent';
+import { FileText } from "lucide-react";
+import { type Document, siteContent } from "../content/siteContent";
+import Section from "./Section";
 
 export default function DocumentsSection() {
   const hasDocuments = siteContent.documents.length > 0;
 
   return (
-    <Section 
-      id="documents"
-      title={siteContent.documentsSection.title}
-    >
+    <Section id="documents" title={siteContent.documentsSection.title}>
       {!hasDocuments ? (
         <div className="text-center py-12 px-4 bg-muted/30 rounded-lg border border-border">
           <FileText className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
@@ -19,9 +16,9 @@ export default function DocumentsSection() {
         </div>
       ) : (
         <div className="grid gap-6 md:grid-cols-2">
-          {siteContent.documents.map((doc: Document, index: number) => (
+          {siteContent.documents.map((doc: Document) => (
             <a
-              key={index}
+              key={doc.href}
               href={doc.href}
               target="_blank"
               rel="noopener noreferrer"
