@@ -313,7 +313,7 @@ export const siteContent = {
     title: "Contact Information",
     content:
       "For inquiries regarding this property claim, legal matters, or to request additional documentation, please contact us via email. We will respond to legitimate inquiries in a timely manner.",
-    email: "contact@example.com", // Owners should update this with their actual contact email
+    email: "khutiaashim@gmail.com",
   },
 
   disclaimer:
